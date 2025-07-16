@@ -1,11 +1,20 @@
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/Home";
+import Shop from "./pages/Shop";
+import Navbar from "./components/Navbar";
 
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shopping Cart</title>
-</head>
-<body>
-  
-</body>
-</html>
+function App() {
+  return (
+    <Router>
+      <Navbar />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/shop" element={<Shop />} />
+        </Routes>
+      </main>
+    </Router>
+  );
+}
+
+export default App;
